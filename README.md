@@ -1,2 +1,2 @@
 # TwistedWeb
-Ewan and Michal
+Ewan
