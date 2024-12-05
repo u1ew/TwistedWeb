@@ -84,8 +84,12 @@
                     </ul>
                 <?php } else { ?>
                     <div class='text-end' bis_skin_checked='1'>
-                        <button type="button" class="btn btn-outline-dark me-2">Login</button>
-                        <button type="button" class="btn btn-warning">Sign-up</button>
+                        <a style="text-decoration: none;" href="loginPage.php">
+                            <button type="button" class="btn btn-outline-dark me-2">Login</button>
+                        </a>
+                        <a style="text-decoration: none;" href="signupPage.php">
+                            <button type="button" class="btn btn-warning">Sign-up</button>
+                        </a>
                     </div>
                 <?php } ?>
 
