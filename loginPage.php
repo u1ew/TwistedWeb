@@ -13,12 +13,12 @@
     <header class="p-3 mb-3 border-bottom">
         <div class="container" bis_skin_checked="1">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" bis_skin_checked="1">
-                <a href="/index.php" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                <a href="index.php" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
                     <img class="bi me-2" height="55px" role="img" aria-label="The Car Garage Company" src="/img/logo.PNG">
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 link-body-emphasis">Home</a></li>
+                    <li><a href="index.php" class="nav-link px-2 link-body-emphasis">Home</a></li>
                     <li><a href="#" class="nav-link px-2 link-body-emphasis">Book service</a></li>
                     <li><a href="#" class="nav-link px-2 link-body-emphasis">Inquire</a></li>
                     <li><a href="#" class="nav-link px-2 link-body-emphasis">Previous bookings</a></li>
@@ -86,7 +86,9 @@
                 <?php } else { ?>
                     <div class='text-end' bis_skin_checked='1'>
                         <button disabled type="button" class="btn btn-outline-dark me-2">Login</button>
-                        <button type="button" class="btn btn-warning">Sign-up</button>
+                        <a style="text-decoration: none;" href="signupPage.php">
+                            <button type="button" class="btn btn-warning">Sign-up</button>
+                        </a>
                     </div>
                 <?php } ?>
 
@@ -104,11 +106,11 @@
                 <div class="modal-body p-5 pt-0">
                     <form class="">
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                            <input type="email" class="form-control rounded-3" id="sEmail" placeholder="name@example.com">
                             <label for="floatingInput">Email address</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                            <input type="password" class="form-control rounded-3" id="sPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                         </div>
                         <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Log in</button>
