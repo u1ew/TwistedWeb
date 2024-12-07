@@ -23,7 +23,7 @@
                     <li><a href="#" class="nav-link px-2 link-body-emphasis">About</a></li>
                 </ul>
 
-                <?php if (isset($_SESSION['loggedIn']) && $_SESSION['isAdmin'] === 0) { ?>
+                <?php if (isset($_SESSION['loggedIn']) && $_SESSION["loggedIn"] === true && $_SESSION['admin'] === 0) { ?>
                     <div class="dropdown text-end" bis_skin_checked="1">
                         <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="/img/profile.png" alt="mdo" width="32" height="32" class="rounded-circle">
@@ -37,7 +37,7 @@
                             <li><a class="dropdown-item" href="#">Sign out</a></li>
                         </ul>
                     </div>
-                <?php } elseif (isset($_SESSION['loggedIn']) && $_SESSION['isAdmin'] === 1) { ?>
+                <?php } elseif (isset($_SESSION['loggedIn']) && $_SESSION["loggedIn"] === true && $_SESSION['admin'] === 1) { ?>
                     <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                         <li>
                             <a href="#" class="nav-link text-secondary">

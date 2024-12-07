@@ -1,6 +1,12 @@
 <?php
 require_once "../TwistedWeb/scripts/connect.php";
 
+// Check if the user is already logged in, if yes then redirect him to main page
+if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true){
+    header("location: index.php");
+    exit;
+}
+
 // Define variables and initialize with empty values
 $email = $firstname = $lastname = $password = $confirm_password = "";
 $emailErr = $firstnameErr = $lastnameErr = $passwordErr = $confirmPasswordErr = "";
@@ -125,91 +131,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <header class="p-3 mb-3 border-bottom">
-        <div class="container" bis_skin_checked="1">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" bis_skin_checked="1">
-                <a href="index.php" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
-                    <img class="bi me-2" height="55px" role="img" aria-label="The Car Garage Company" src="/img/logo.PNG">
-                </a>
-
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="index.php" class="nav-link px-2 link-body-emphasis">Home</a></li>
-                    <li><a href="#" class="nav-link px-2 link-body-emphasis">Book service</a></li>
-                    <li><a href="#" class="nav-link px-2 link-body-emphasis">Inquire</a></li>
-                    <li><a href="#" class="nav-link px-2 link-body-emphasis">Previous bookings</a></li>
-                    <li><a href="#" class="nav-link px-2 link-body-emphasis">FAQs</a></li>
-                    <li><a href="#" class="nav-link px-2 link-body-emphasis">About</a></li>
-                </ul>
-
-                <?php if (isset($_SESSION['loggedIn']) && $_SESSION['isAdmin'] === 0) { ?>
-                    <div class="dropdown text-end" bis_skin_checked="1">
-                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="/img/profile.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                        </a>
-                        <ul class="dropdown-menu text-small">
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
-                        </ul>
-                    </div>
-                <?php } elseif (isset($_SESSION['loggedIn']) && $_SESSION['isAdmin'] === 1) { ?>
-                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                        <li>
-                            <a href="#" class="nav-link text-secondary">
-                                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                    <use xlink:href="#home"></use>
-                                </svg>
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link text-white">
-                                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                    <use xlink:href="#speedometer2"></use>
-                                </svg>
-                                Dashboard
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link text-white">
-                                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                    <use xlink:href="#table"></use>
-                                </svg>
-                                Orders
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link text-white">
-                                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                    <use xlink:href="#grid"></use>
-                                </svg>
-                                Products
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link text-white">
-                                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                    <use xlink:href="#people-circle"></use>
-                                </svg>
-                                Customers
-                            </a>
-                        </li>
-                    </ul>
-                <?php } else { ?>
-                    <div class='text-end' bis_skin_checked='1'>
-                        <a style="text-decoration: none;" href="loginPage.php">
-                            <button type="button" class="btn btn-outline-dark me-2">Login</button>
-                        </a>
-                        <button disabled type="button" class="btn btn-warning">Sign-up</button>
-                    </div>
-                <?php } ?>
-
-            </div>
-        </div>
-    </header>
 
     <div class="modal modal-sheet position-static d-block p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
         <div class="modal-dialog" role="document">
