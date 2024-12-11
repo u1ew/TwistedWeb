@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <!-- LOGIN OVERLAY START -->
     <div class="align-self-center" id="loginOverlay">
         <div class="modal modal-sheet position-static d-block p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
             <div class="modal-dialog" role="document">
@@ -31,12 +32,15 @@
                             </div>
                             <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Log in</button>
                         </form>
+                        <a style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1)); text-decoration: underline;" onclick="signupDisplay()">Don't have an account?</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- LOGIN OVERLAY END -->
 
+    <!-- SIGN UP OVERLAY START -->
     <div class="align-self-center" id="signupOverlay">
         <div class="modal modal-sheet position-static d-block p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
             <div class="modal-dialog" role="document">
@@ -73,13 +77,14 @@
                             </div>
                             <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
                             <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
-
                         </form>
+                        <a style="color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1)); text-decoration: underline;" onclick="loginDisplay()">Have an account?</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- SIGN UP OVERLAY END -->
 
     <!-- BEGINNING OF THE HEADER -->
     <header class="p-3 mb-3 border-bottom">
@@ -169,6 +174,9 @@
     </header>
     <!-- THIS IS THE END OF THE HEADER -->
 
+    <?php
+    echo $_SESSION["loggedIn"]
+    ?>
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

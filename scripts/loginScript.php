@@ -4,12 +4,12 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to main page
 if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true){
-    header("location: index.php");
+    header("location: ../index.php");
     exit;
 }
  
 // Include config file
-require_once "scripts/connect.php";
+require_once "connect.php";
  
 // Define variables and initialize with empty values
 $email = $password = "";
@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($emailErr) && empty($passwordErr)){
         // Prepare a select statement
-        $sql = "SELECT users.userID, users.email, users.firstname, users.lastname users.password users.isAdmin FROM users WHERE email = ?";
+        $sql = "SELECT users.userID, users.email, users.firstname, users.lastname, users.password, users.isAdmin FROM users WHERE email = ?";
         
         if($stmt = mysqli_prepare($conn, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -66,7 +66,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["admin"] = $admin;           
                             
                             // Redirect user to main page
-                            header("location: index.php");
+                            header("location: ../index.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $loginErr = "Invalid email or password.";
