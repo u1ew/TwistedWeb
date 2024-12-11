@@ -69,7 +69,7 @@
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="password" class="form-control rounded-3" id="signupPassword" name="signupPassword" placeholder="Password">
-                                <label for="password">Password</label>
+                                <label for="signupPassword">Password</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="password" class="form-control rounded-3" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
@@ -173,10 +173,6 @@
         </div>
     </header>
     <!-- THIS IS THE END OF THE HEADER -->
-
-    <?php
-    echo $_SESSION["loggedIn"]
-    ?>
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

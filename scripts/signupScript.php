@@ -1,9 +1,12 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
 require_once "connect.php";
 
 // Check if the user is already logged in, if yes then redirect him to main page
 if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true) {
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit;
 }
 
@@ -89,22 +92,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($emailErr) && empty($passwordErr) && empty($confirmPasswordErr)) {
 
         // Prepare an insert statement
-        $sql = "INSERT INTO users (firstname, lastname, email, password) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO users (firstname, lastname, email, password, isAdmin) VALUES (?, ?, ?, ?, ?)";
 
         if ($stmt = mysqli_prepare($conn, $sql)) {
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssss", $paramFirstname, $paramLastname, $paramEmail, $paramPassword);
+            mysqli_stmt_bind_param($stmt, "ssssi", $paramFirstname, $paramLastname, $paramEmail, $paramPassword, $paramAdmin);
 
             // Set parameters
             $paramFirstname = $firstname;
             $paramLastname = $lastname;
             $paramEmail = $email;
             $paramPassword = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-
+            $paramAdmin = 0;
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
-                // Redirect to login page
-                header("Location: index.php");
+                header("Location: ../index.php"); // Redirect to login page
+                exit;
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
