@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to main page
 if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true){
-    header("location: ../index.php");
+    header("Location: index.php");
     exit;
 }
  
@@ -55,6 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     mysqli_stmt_bind_result($stmt, $id, $email, $firstname, $lastname, $hashed_password, $admin);
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
+                            echo "working";
                             // Password is correct, so start a new session
                             session_start();
                             
@@ -66,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["admin"] = $admin;           
                             
                             // Redirect user to main page
-                            header("location: ../index.php");
+                            header("Location: index.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $loginErr = "Invalid email or password.";

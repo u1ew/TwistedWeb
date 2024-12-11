@@ -2,8 +2,8 @@
 require_once "connect.php";
 
 // Check if the user is already logged in, if yes then redirect him to main page
-if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true){
-    header("location: index.php");
+if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true) {
+    header("Location: index.php");
     exit;
 }
 
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
                 // Redirect to login page
-                header("location: index.php");
+                header("Location: index.php");
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -117,4 +117,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Close connection
     mysqli_close($conn);
 }
-?>
