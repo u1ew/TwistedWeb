@@ -19,17 +19,17 @@ $emailErr = $passwordErr = $loginErr = "";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Check if email is empty
-    if(empty(trim($_POST["email"]))){
+    if(empty(trim($_POST["loginEmail"]))){
         $emailErr = "Please enter email.";
     } else{
-        $email = trim($_POST["email"]);
+        $email = trim($_POST["loginEmail"]);
     }
     
     // Check if password is empty
-    if(empty(trim($_POST["password"]))){
+    if(empty(trim($_POST["loginPassword"]))){
         $passwordErr = "Please enter your password.";
     } else{
-        $password = trim($_POST["password"]);
+        $password = trim($_POST["loginPassword"]);
     }
     
     // Validate credentials
@@ -89,45 +89,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($conn);
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-</head>
-
-<body>
-
-    <div class="modal modal-sheet position-static d-block p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content rounded-4 shadow">
-                <div class="modal-header p-5 pb-4 border-bottom-0">
-                    <h1 class="fw-bold mb-0 fs-2">Log in</h1>
-                </div>
-
-                <div class="modal-body p-5 pt-0">
-                    <form class="">
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control rounded-3" id="email" name="email" placeholder="name@example.com">
-                            <label for="email">Email address</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" class="form-control rounded-3" id="password" name="password" placeholder="Password">
-                            <label for="password">Password</label>
-                        </div>
-                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Log in</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-
-</html>
