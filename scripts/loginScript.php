@@ -55,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     mysqli_stmt_bind_result($stmt, $id, $email, $firstname, $lastname, $hashed_password, $admin);
                     if (mysqli_stmt_fetch($stmt)) {
                         if (password_verify($password, $hashed_password)) {
+                            session_start();
                             // Store data in session variables
                             $_SESSION["loggedIn"] = true;
                             $_SESSION["id"] = $id;

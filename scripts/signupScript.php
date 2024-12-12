@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 session_start();
 require_once "connect.php";
 
@@ -54,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty((trim($_POST["firstname"])))) {
         $firstnameErr = "Please enter a first name";
-    } elseif (strlen(trim($_POST["firstname"])) > 23) {
+    } elseif (strlen(trim($_POST["firstname"])) >= 50) {
         $firstnameErr = "Please keep firstname less than 50 characters";
     } else {
         $firstname = trim($_POST["firstname"]);
@@ -62,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty((trim($_POST["lastname"])))) {
         $lastnameErr = "Please enter a first name";
-    } elseif (strlen(trim($_POST["lastname"])) > 23) {
+    } elseif (strlen(trim($_POST["lastname"])) >= 50) {
         $lastnameErr = "Keep lastname less than 50 characters";
     } else {
 
