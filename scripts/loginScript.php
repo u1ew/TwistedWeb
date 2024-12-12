@@ -1,12 +1,6 @@
 <?php
-// Initialize the session
-session_start();
-
-// Check if the user is already logged in, if yes then redirect him to main page
-if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true) {
-    header("Location: ../index.php");
-    exit;
-}
+require_once "utils.php";
+loggedInCheck();
 
 // Include config file
 require_once "connect.php";

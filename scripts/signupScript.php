@@ -1,12 +1,7 @@
 <?php
-session_start();
+require_once "utils.php";
+loggedInCheck();
 require_once "connect.php";
-
-// Check if the user is already logged in, if yes then redirect him to main page
-if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true) {
-    header("Location: ../index.php");
-    exit;
-}
 
 // Define variables and initialize with empty values
 $email = $firstname = $lastname = $password = $confirm_password = "";
