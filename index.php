@@ -177,6 +177,48 @@
     </header>
     <!-- THIS IS THE END OF THE HEADER -->
 
+    <header>
+        <h1>Welcome to AutoCare Garage</h1>
+        <p>Your trusted partner for all car servicing needs</p>
+    </header>
+    <div class="container">
+        <section class="services">
+            <div class="service">
+                <img src="https://via.placeholder.com/300x200" alt="Oil Change">
+                <h3>Oil Change</h3>
+                <p>Keep your engine running smoothly with our quick and affordable oil change service.</p>
+            </div>
+            <div class="service">
+                <img src="https://via.placeholder.com/300x200" alt="Brake Service">
+                <h3>Brake Service</h3>
+                <p>Ensure your safety with our comprehensive brake inspection and repair services.</p>
+            </div>
+            <div class="service">
+                <img src="https://via.placeholder.com/300x200" alt="Tire Rotation">
+                <h3>Tire Rotation</h3>
+                <p>Extend the life of your tires with our professional tire rotation service.</p>
+            </div>
+            <div class="service">
+                <img src="https://via.placeholder.com/300x200" alt="Battery Check">
+                <h3>Battery Check</h3>
+                <p>Stay powered up with our thorough battery testing and replacement services.</p>
+            </div>
+            <div class="service">
+                <img src="https://via.placeholder.com/300x200" alt="Engine Diagnostics">
+                <h3>Engine Diagnostics</h3>
+                <p>Identify and fix engine issues quickly with our advanced diagnostic tools.</p>
+            </div>
+            <div class="service">
+                <img src="https://via.placeholder.com/300x200" alt="AC Service">
+                <h3>AC Service</h3>
+                <p>Stay cool with our complete air conditioning service and repair.</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 AutoCare Garage. All rights reserved.</p>
+    </footer>
+
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
