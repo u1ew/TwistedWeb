@@ -135,7 +135,8 @@
             </div>
         </div>
     </header>
-<?php } elseif (isset($_SESSION['loggedIn']) && $_SESSION["loggedIn"] === true && $_SESSION['admin'] === 1) { ?>
+    
+<?php /* ADIN SCREEN */ } elseif (isset($_SESSION['loggedIn']) && $_SESSION["loggedIn"] === true && $_SESSION['admin'] === 1) { ?>
     <div class="flex-shrink-0 p-3" style="width: 280px;" bis_skin_checked="1">
         <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
             <svg class="bi pe-none me-2" width="30" height="24">
